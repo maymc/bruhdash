@@ -44,12 +44,28 @@ global.bruhdash = {
   },
 
   // returns an array with all elements except for the last element
-  initial: function () {
+  initial: function (arr) {
+    var allButLast = [];
+    for(var i=0; i<(arr.length-1); i++){
+      allButLast.push(arr[i]);
+    }
+    return allButLast;
 
   },
   
   // returns an array with all falsey values removed
-  compact: function() {
+  //The values false, null, 0, "", undefined, and NaN are falsey.
+  compact: function(arr) {
+    var nonFalseArray = [];
+
+    for(var i=0; i<arr.length; i++){
+      var elem = arr[i];
+
+      if(elem !== false && elem !== null && elem !== 0 && elem !== "" && elem!== undefined && !isNaN(elem)){
+        nonFalseArray.push(elem);
+      }
+    }
+    return nonFalseArray;
 
   },
 
