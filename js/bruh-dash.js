@@ -116,7 +116,27 @@ global.bruhdash = {
   },
 
   // creates a slice of an array with n elements taken from the beginning
-  take: function () {
+  take: function (arr, num) {
+    var arr2 = [];
+    var begElem;
+
+    if(num === undefined){
+      begElem = arr.shift();
+      arr2.push(begElem);
+      return arr2;
+    }
+    else if(num>arr.length){
+      return arr;
+    }
+    else{
+      while(num>0){
+        var begElem = arr.shift();
+        arr2.push(begElem);
+        num--;
+      }
+      return arr2;
+    }
+
 
   },
 
