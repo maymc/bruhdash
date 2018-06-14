@@ -251,8 +251,16 @@ global.bruhdash = {
    *******************/ 
 
   // creates an array of grouped elements
-  zip: function () {
+  zip: function (arr1, arr2) {
+    var grouped = [];
 
+    for(var i=0; i<arr1.length; i++){
+      var grpElem = [];
+      grpElem.push(arr1[i]);
+      grpElem.push(arr2[i]);
+      grouped.push(grpElem);
+    }
+    return grouped;
   },
 
   // creates an array of grouped elements in their pre-zip configuration
