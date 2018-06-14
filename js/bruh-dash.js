@@ -192,13 +192,23 @@ global.bruhdash = {
 
   // removes all given values from an array
   pull: function (arr, value1, value2) {
-    var arr2 = [];
     for(var i=0; i<arr.length; i++){
-      if(arr[i] !== value1 && arr[i] !== value2){
-        arr2.push(arr[i]);
+      if(arr[i] === value1){
+        arr.splice(i, 1);
+		    //console.log(arr);
+		    //console.log("i:" + i);
+		    i = i-1;
+		    //console.log("new i: " + i);
+      }
+      else if(arr[i] === value2){
+        arr.splice(i, 1);
+		    //console.log(arr);
+        //console.log("i:" + i);
+        i=i-1;
+        //console.log("new i: " + i);
       }
     }
-    return arr2;
+    return arr;
   },
 
   // removes elements of an array corresponding to the given indices
@@ -215,8 +225,14 @@ global.bruhdash = {
   },
 
   // creates an array excluding all the specified values
-  without: function() {
-
+  without: function(arr, value1, value2) {
+    var arr2 = [];
+    for(var i=0; i<arr.length; i++){
+      if(arr[i] !== value1 && arr[i] !== value2){
+        arr2.push(arr[i]);
+      }
+    }
+    return arr2;
   },
 
   // returns an array with specified values excluded
