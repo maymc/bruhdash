@@ -141,7 +141,29 @@ global.bruhdash = {
   },
 
   // creates a slice of an array with n elements taken from the end
-  takeRight: function () {
+  takeRight: function (arr, num) {
+    var arr2 = [];
+    
+    if(num === 0){
+      return arr2;
+    }
+    else if(num > arr.length){
+      return arr;
+    }
+    else if(num === undefined){
+      var elem = arr.pop();
+      arr2.push(elem);
+      return arr2;
+    }
+    else{
+      while(num > 0){
+        var elem = arr.pop();
+        arr2.push(elem);
+        num--;
+      }
+      arr2.reverse();
+      return arr2;
+    }
 
   },
 
