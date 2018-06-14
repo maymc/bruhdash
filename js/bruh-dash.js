@@ -202,8 +202,16 @@ global.bruhdash = {
   },
 
   // removes elements of an array corresponding to the given indices
-  pullAt: function () {
-
+  pullAt: function (arr, indexArr) {
+    var arr2 = [];
+    for(var i=0; i<arr.length; i++){
+      for(var j=0; j<indexArr.length; j++){
+        if(i === indexArr[j]){
+          arr2.push(arr[i]);
+        }
+      }
+    }
+    return arr2;
   },
 
   // creates an array excluding all the specified values
