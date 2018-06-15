@@ -318,9 +318,9 @@ global.bruhdash = {
   // iterates over elements of a collection and invokes iteratee for each element
   // Note: this should work for arrays and objects
   forEach: function(collection, iteratee) {
-    if(typeof collection !== "object"){
-      iteratee = function()
-
+    //If collection is an array
+    if(Array.isArray(collection)){
+      
     }
   },
 
