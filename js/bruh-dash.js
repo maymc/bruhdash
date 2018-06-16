@@ -59,27 +59,30 @@ global.bruhdash = {
   // returns an array with all falsey values removed
   //The values false, null, 0, "", undefined, and NaN are falsey.
   compact: function(arr) {
-    // var nonFalseArray = [];
+    var nonFalseArray = [];
+    var index = 0;
 
-    // for(var i=0; i<arr.length; i++){
-    //   var elem = arr[i];
+    for(var i=0; i<arr.length; i++){
+      var elem = arr[i];
 
-    //   if(elem !== false && elem !== null && elem !== 0 && elem !== "" && elem!== undefined && !isNaN(elem)){
-    //     nonFalseArray.push(elem);
-    //   }
-    // }
-    // return nonFalseArray;
+      if(elem !== false && elem !== null && elem !== 0 && elem !== "" && elem!== undefined && !isNaN(elem)){
+        // nonFalseArray.push(elem);
+        nonFalseArray[index] = arr[i];
+        index++;
+      }
+    }
+    return nonFalseArray;
 
   },
 
   // creates a slice of an array from the start index up to but not including the end index
-  slice: function (arr, start, end) {
-    var slicedArray = [];
-    for(var i=start; i<end; i++){
-      slicedArray.push(arr[i]);
-    }
-    return slicedArray;
-  },
+  // slice: function (arr, start, end) {
+  //   var slicedArray = [];
+  //   for(var i=start; i<end; i++){
+  //     slicedArray.push(arr[i]);
+  //   }
+  //   return slicedArray;
+  // },
 
   // returns a slice of array with n elements dropped from the beignning
   drop: function(arr, num){
