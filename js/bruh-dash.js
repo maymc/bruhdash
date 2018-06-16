@@ -11,15 +11,17 @@ global.bruhdash = {
 
   // returns the first element of an array
   first: function (arr) {
-    var firstElem = arr.shift();
-    return firstElem;
+    // var firstElem = arr.shift();
+    // return firstElem;
+    return arr[0];
       
   },
 
   // returns the last element of an array
   last: function (arr) {
-    var lastElem = arr.pop();
-    return lastElem;
+    // var lastElem = arr.pop();
+    // return lastElem;
+    return arr[arr.length-1];
 
   },
 
@@ -47,7 +49,8 @@ global.bruhdash = {
   initial: function (arr) {
     var allButLast = [];
     for(var i=0; i<(arr.length-1); i++){
-      allButLast.push(arr[i]);
+      // allButLast.push(arr[i]);
+      allButLast[i] = arr[i];
     }
     return allButLast;
 
@@ -56,16 +59,16 @@ global.bruhdash = {
   // returns an array with all falsey values removed
   //The values false, null, 0, "", undefined, and NaN are falsey.
   compact: function(arr) {
-    var nonFalseArray = [];
+    // var nonFalseArray = [];
 
-    for(var i=0; i<arr.length; i++){
-      var elem = arr[i];
+    // for(var i=0; i<arr.length; i++){
+    //   var elem = arr[i];
 
-      if(elem !== false && elem !== null && elem !== 0 && elem !== "" && elem!== undefined && !isNaN(elem)){
-        nonFalseArray.push(elem);
-      }
-    }
-    return nonFalseArray;
+    //   if(elem !== false && elem !== null && elem !== 0 && elem !== "" && elem!== undefined && !isNaN(elem)){
+    //     nonFalseArray.push(elem);
+    //   }
+    // }
+    // return nonFalseArray;
 
   },
 
@@ -320,7 +323,10 @@ global.bruhdash = {
   forEach: function(collection, iteratee) {
     //If collection is an array
     if(Array.isArray(collection)){
-      
+      for(var i=0; i<collection.length; i++){
+        var arr2 = iteratee(collection);
+      }
+      return arr2;
     }
   },
 
