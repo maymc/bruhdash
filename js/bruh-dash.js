@@ -76,31 +76,35 @@ global.bruhdash = {
   },
 
   // creates a slice of an array from the start index up to but not including the end index
-  // slice: function (arr, start, end) {
-  //   var slicedArray = [];
-  //   for(var i=start; i<end; i++){
-  //     slicedArray.push(arr[i]);
-  //   }
-  //   return slicedArray;
-  // },
+  slice: function (arr, start, end) {
+    var slicedArray = [];
+    var index = 0;
+
+    for(var i=start; i<end; i++){
+      // slicedArray.push(arr[i]);
+      slicedArray[index] = arr[i];
+      index++;
+    }
+    return slicedArray;
+  },
 
   // returns a slice of array with n elements dropped from the beignning
-  drop: function(arr, num){
-    if(num === undefined){
-      arr.shift();
-      return arr;
-    }
-    else if(num === 0){
-      return arr;
-    }
-    else{
-      while(num>0){
-        arr.shift();
-        num--;
-      }
-      return arr;
-    }
-  },
+  // drop: function(arr, num){
+  //   if(num === undefined){
+  //     arr.shift();
+  //     return arr;
+  //   }
+  //   else if(num === 0){
+  //     return arr;
+  //   }
+  //   else{
+  //     while(num>0){
+  //       arr.shift();
+  //       num--;
+  //     }
+  //     return arr;
+  //   }
+  // },
 
   // returns a slice of array with n elements dropped from the end
   dropRight: function(arr, num) {
