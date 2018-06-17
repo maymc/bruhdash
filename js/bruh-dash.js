@@ -117,19 +117,26 @@ global.bruhdash = {
 
   // returns a slice of array with n elements dropped from the end
   dropRight: function(arr, num) {
+    var arr2 = [];
     if(num === undefined){
-      arr.pop();
-      return arr;
+      for(var i=0; i<arr.length-1; i++){
+        arr2[i] = arr[i];
+      }
+      // arr.pop();
+      return arr2;
     }
     else if(num === 0){
       return arr;
     }
     else{
-      while(num>0){
-        arr.pop();
-        num--;
+      // while(num>0){
+      //   arr.pop();
+      //   num--;
+      // }
+      for(var i=0; i<arr.length-num; i++){
+        arr2[i] = arr[i];
       }
-      return arr;
+      return arr2;
     }
 
   },
