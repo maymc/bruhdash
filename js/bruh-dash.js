@@ -327,18 +327,27 @@ global.bruhdash = {
   },
 
   // creates an array of grouped elements in their pre-zip configuration
-  unzip: function (arr) {
+  unzip: function unzip(arr) {
     var ungroup = [];
+    var index = 0;
+    var index2 = 0;
 
     for(var i=0; i<arr[i].length; i++){
       var unzipElem = [];
       
       for(var j=0; j<arr.length; j++){   
         //console.log(arr[j][i]);
-        unzipElem.push(arr[j][i]);
+        //unzipElem.push(arr[j][i]);
         //console.log(unzipElem);
+        //console.log("arr[j][i]: " + arr[j][i]);
+        unzipElem[index] = arr[j][i];
+        //console.log(unzipElem)
+        index++;
       }
-      ungroup.push(unzipElem);
+      //ungroup.push(unzipElem);
+      ungroup[index2] = unzipElem; //add the first group to the new array
+      index2++; //Increase index for the next group
+      index = 0; //After pushing in the first group, reset index count
       //console.log(ungroup);
     }
     return ungroup;
