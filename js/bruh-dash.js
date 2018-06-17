@@ -230,23 +230,28 @@ global.bruhdash = {
 
   // removes all given values from an array
   pull: function (arr, value1, value2) {
+    var index = 0;
+    var arr2 = [];
+
     for(var i=0; i<arr.length; i++){
-      if(arr[i] === value1){
-        arr.splice(i, 1);
+      if(arr[i] !== value1 && arr[i] !== value2){
+        arr2[index] = arr[i];
+        index++;
+        //arr.splice(i, 1);
 		    //console.log(arr);
 		    //console.log("i:" + i);
-		    i = i-1;
+		    //i = i-1;
 		    //console.log("new i: " + i);
       }
-      else if(arr[i] === value2){
-        arr.splice(i, 1);
-		    //console.log(arr);
-        //console.log("i:" + i);
-        i=i-1;
-        //console.log("new i: " + i);
-      }
+      // else if(arr[i] === value2){
+      //   arr.splice(i, 1);
+		  //   console.log(arr);
+      //   console.log("i:" + i);
+      //   i=i-1;
+      //   console.log("new i: " + i);
+      // }
     }
-    return arr;
+    return arr2;
   },
 
   // removes elements of an array corresponding to the given indices
