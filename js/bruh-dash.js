@@ -358,6 +358,7 @@ global.bruhdash = {
     var group = [];
     var arr2 = [];
     var count = 0;
+    var grpCount = 0;
 
     if(arr.length === 0){
       return arr;
@@ -371,15 +372,19 @@ global.bruhdash = {
     }
     else{
       for(var i=0; i<arr.length; i++){
-        arr2.push(arr[i]);
+        //arr2.push(arr[i]);
+        arr2[count] = arr[i];
         count++;
         if(count === size){
-          group.push(arr2);
+          //group.push(arr2);
+          group[grpCount] = arr2;
+          grpCount++;
           arr2 = [];
           count = 0;
         }
         else if(i === arr.length-1){
-          group.push(arr2);
+          //group.push(arr2);
+          group[grpCount] = arr2;
         }
       }
       return group;
