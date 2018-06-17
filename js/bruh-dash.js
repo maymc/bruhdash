@@ -147,23 +147,26 @@ global.bruhdash = {
     var begElem;
 
     if(num === undefined){
-      begElem = arr.shift();
-      arr2.push(begElem);
+      // begElem = arr.shift();
+      // arr2.push(begElem);
+      arr2[0] = arr[0];
+
       return arr2;
     }
     else if(num>arr.length){
       return arr;
     }
     else{
-      while(num>0){
-        var begElem = arr.shift();
-        arr2.push(begElem);
-        num--;
+      // while(num>0){
+      //   var begElem = arr.shift();
+      //   arr2.push(begElem);
+      //   num--;
+      // }
+      for(var i=0; i<num; i++){
+        arr2[i] = arr[i];
       }
       return arr2;
     }
-
-
   },
 
   // creates a slice of an array with n elements taken from the end
