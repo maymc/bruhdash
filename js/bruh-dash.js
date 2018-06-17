@@ -287,9 +287,13 @@ global.bruhdash = {
   // returns an array with specified values excluded
   difference: function(arr, values) {
     var arr2 = [];
+    var index = 0;
+
     for(var i=0; i<arr.length; i++){
       if(arr[i] !== values[i]){
-        arr2.push(arr[i]);
+        //arr2.push(arr[i]);
+        arr2[index] = arr[i];
+        index++;
       }
     }
     return arr2;
