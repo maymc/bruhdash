@@ -180,17 +180,23 @@ global.bruhdash = {
       return arr;
     }
     else if(num === undefined){
-      var elem = arr.pop();
-      arr2.push(elem);
+      // var elem = arr.pop();
+      // arr2.push(elem);
+      arr2[0] = arr[arr.length-1];
       return arr2;
     }
     else{
-      while(num > 0){
-        var elem = arr.pop();
-        arr2.push(elem);
-        num--;
+      // while(num > 0){
+      //   var elem = arr.pop();
+      //   arr2.push(elem);
+      //   num--;
+      // }
+      // arr2.reverse();
+      var index = 0;
+      for(var i=arr.length-num; i<arr.length; i++){
+        arr2[index] = arr[i];
+        index++;
       }
-      arr2.reverse();
       return arr2;
     }
 
