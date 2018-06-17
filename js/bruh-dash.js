@@ -89,22 +89,31 @@ global.bruhdash = {
   },
 
   // returns a slice of array with n elements dropped from the beignning
-  // drop: function(arr, num){
-  //   if(num === undefined){
-  //     arr.shift();
-  //     return arr;
-  //   }
-  //   else if(num === 0){
-  //     return arr;
-  //   }
-  //   else{
-  //     while(num>0){
-  //       arr.shift();
-  //       num--;
-  //     }
-  //     return arr;
-  //   }
-  // },
+  drop: function(arr, num){
+    var arr2 = [];
+    if(num === undefined){
+      //arr.shift();
+      for(var i=1; i<arr.length; i++){
+        arr2[i-1] = arr[i];
+      }
+      return arr2;
+    }
+    else if(num === 0){
+      return arr;
+    }
+    else{
+      // while(num>0){
+      //   arr.shift();
+      //   num--;
+      // }
+      var index = 0;
+      for(var i=num; i<arr.length; i++){
+        arr2[index] = arr[i];
+        index++;
+      }
+      return arr2;
+    }
+  },
 
   // returns a slice of array with n elements dropped from the end
   dropRight: function(arr, num) {
