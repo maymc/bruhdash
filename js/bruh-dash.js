@@ -208,17 +208,20 @@ global.bruhdash = {
     var arr2 = [];
     if(start === undefined && end === undefined){
       for(var i=0; i<arr.length; i++){
-        arr2.push(value);
+        //arr2.push(value);
+        arr2[i] = value;
       }
       return arr2;
     }
     else{
       for(var i=0; i<arr.length; i++){
         if(i >= start && i < end){
-          arr2.push(value);
+          //arr2.push(value);
+          arr2[i] = value;
         }
         else{
-          arr2.push(arr[i]);
+          //arr2.push(arr[i]);
+          arr2[i] = arr[i];
         }
       }
       return arr2;
