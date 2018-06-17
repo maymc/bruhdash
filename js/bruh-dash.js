@@ -306,12 +306,22 @@ global.bruhdash = {
   // creates an array of grouped elements
   zip: function (arr1, arr2) {
     var grouped = [];
+    var index = 0;
 
     for(var i=0; i<arr1.length; i++){
       var grpElem = [];
-      grpElem.push(arr1[i]);
-      grpElem.push(arr2[i]);
-      grouped.push(grpElem);
+      grpElem[0] = arr1[i];
+      //console.log("arr1: "+arr1[i]);
+      //console.log(grpElem);
+      
+      grpElem[1] = arr2[i];
+     //console.log("arr2: "+arr2[i]);
+      //console.log(grpElem);
+      
+      grouped[index] = grpElem;
+      //console.log(grouped);
+      
+      index++;
     }
     return grouped;
   },
