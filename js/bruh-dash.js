@@ -273,9 +273,12 @@ global.bruhdash = {
   // creates an array excluding all the specified values
   without: function(arr, value1, value2) {
     var arr2 = [];
+    var index = 0;
     for(var i=0; i<arr.length; i++){
       if(arr[i] !== value1 && arr[i] !== value2){
-        arr2.push(arr[i]);
+        //arr2.push(arr[i]);
+        arr2[index] = arr[i];
+        index++;
       }
     }
     return arr2;
