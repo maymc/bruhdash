@@ -410,13 +410,28 @@ global.bruhdash = {
       }
       return collection;
     }
-
   },
 
   // creates an array of values by running each element in collection thru the iteratee
   // Note: this should work for arrays and objects
-  map: function() {
-
+  map: function(collection, iterateeFunc) {
+    var arr2 = [];
+    var index = 0; //this is to increment through the new array's indexes
+    //If collection is an array
+    if(Array.isArray(collection)){
+      for(var i=0; i<collection.length; i++){
+        arr2[i] = iterateeFunc(collection[i]);
+      }
+      return arr2;
+    }
+    //Else collection is an object
+    else{
+      for(var key in collection){
+        arr2[index] = iterateeFunc(collection[key],key);
+        index++;
+      }
+      return arr2;
+    }
   },
 
   /*************************
