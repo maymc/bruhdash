@@ -11,16 +11,11 @@ global.bruhdash = {
 
   // returns the first element of an array
   first: function (arr) {
-    // var firstElem = arr.shift();
-    // return firstElem;
     return arr[0];
-      
   },
 
   // returns the last element of an array
   last: function (arr) {
-    // var lastElem = arr.pop();
-    // return lastElem;
     return arr[arr.length-1];
 
   },
@@ -49,7 +44,6 @@ global.bruhdash = {
   initial: function (arr) {
     var allButLast = [];
     for(var i=0; i<(arr.length-1); i++){
-      // allButLast.push(arr[i]);
       allButLast[i] = arr[i];
     }
     return allButLast;
@@ -66,7 +60,6 @@ global.bruhdash = {
       var elem = arr[i];
 
       if(elem !== false && elem !== null && elem !== 0 && elem !== "" && elem!== undefined && !isNaN(elem)){
-        // nonFalseArray.push(elem);
         nonFalseArray[index] = arr[i];
         index++;
       }
@@ -81,7 +74,6 @@ global.bruhdash = {
     var index = 0;
 
     for(var i=start; i<end; i++){
-      // slicedArray.push(arr[i]);
       slicedArray[index] = arr[i];
       index++;
     }
@@ -92,7 +84,6 @@ global.bruhdash = {
   drop: function(arr, num){
     var arr2 = [];
     if(num === undefined){
-      //arr.shift();
       for(var i=1; i<arr.length; i++){
         arr2[i-1] = arr[i];
       }
@@ -102,10 +93,6 @@ global.bruhdash = {
       return arr;
     }
     else{
-      // while(num>0){
-      //   arr.shift();
-      //   num--;
-      // }
       var index = 0;
       for(var i=num; i<arr.length; i++){
         arr2[index] = arr[i];
@@ -122,17 +109,12 @@ global.bruhdash = {
       for(var i=0; i<arr.length-1; i++){
         arr2[i] = arr[i];
       }
-      // arr.pop();
       return arr2;
     }
     else if(num === 0){
       return arr;
     }
     else{
-      // while(num>0){
-      //   arr.pop();
-      //   num--;
-      // }
       for(var i=0; i<arr.length-num; i++){
         arr2[i] = arr[i];
       }
@@ -147,8 +129,6 @@ global.bruhdash = {
     var begElem;
 
     if(num === undefined){
-      // begElem = arr.shift();
-      // arr2.push(begElem);
       arr2[0] = arr[0];
 
       return arr2;
@@ -157,11 +137,6 @@ global.bruhdash = {
       return arr;
     }
     else{
-      // while(num>0){
-      //   var begElem = arr.shift();
-      //   arr2.push(begElem);
-      //   num--;
-      // }
       for(var i=0; i<num; i++){
         arr2[i] = arr[i];
       }
@@ -180,18 +155,10 @@ global.bruhdash = {
       return arr;
     }
     else if(num === undefined){
-      // var elem = arr.pop();
-      // arr2.push(elem);
       arr2[0] = arr[arr.length-1];
       return arr2;
     }
     else{
-      // while(num > 0){
-      //   var elem = arr.pop();
-      //   arr2.push(elem);
-      //   num--;
-      // }
-      // arr2.reverse();
       var index = 0;
       for(var i=arr.length-num; i<arr.length; i++){
         arr2[index] = arr[i];
@@ -208,7 +175,6 @@ global.bruhdash = {
     var arr2 = [];
     if(start === undefined && end === undefined){
       for(var i=0; i<arr.length; i++){
-        //arr2.push(value);
         arr2[i] = value;
       }
       return arr2;
@@ -216,11 +182,9 @@ global.bruhdash = {
     else{
       for(var i=0; i<arr.length; i++){
         if(i >= start && i < end){
-          //arr2.push(value);
           arr2[i] = value;
         }
         else{
-          //arr2.push(arr[i]);
           arr2[i] = arr[i];
         }
       }
@@ -237,19 +201,7 @@ global.bruhdash = {
       if(arr[i] !== value1 && arr[i] !== value2){
         arr2[index] = arr[i];
         index++;
-        //arr.splice(i, 1);
-		    //console.log(arr);
-		    //console.log("i:" + i);
-		    //i = i-1;
-		    //console.log("new i: " + i);
       }
-      // else if(arr[i] === value2){
-      //   arr.splice(i, 1);
-		  //   console.log(arr);
-      //   console.log("i:" + i);
-      //   i=i-1;
-      //   console.log("new i: " + i);
-      // }
     }
     return arr2;
   },
@@ -261,7 +213,6 @@ global.bruhdash = {
     for(var i=0; i<arr.length; i++){
       for(var j=0; j<indexArr.length; j++){
         if(i === indexArr[j]){
-          // arr2.push(arr[i]);
           arr2[index] = arr[i];
           index++;
         }
@@ -276,7 +227,6 @@ global.bruhdash = {
     var index = 0;
     for(var i=0; i<arr.length; i++){
       if(arr[i] !== value1 && arr[i] !== value2){
-        //arr2.push(arr[i]);
         arr2[index] = arr[i];
         index++;
       }
@@ -291,7 +241,6 @@ global.bruhdash = {
 
     for(var i=0; i<arr.length; i++){
       if(arr[i] !== values[i]){
-        //arr2.push(arr[i]);
         arr2[index] = arr[i];
         index++;
       }
@@ -311,16 +260,8 @@ global.bruhdash = {
     for(var i=0; i<arr1.length; i++){
       var grpElem = [];
       grpElem[0] = arr1[i];
-      //console.log("arr1: "+arr1[i]);
-      //console.log(grpElem);
-      
       grpElem[1] = arr2[i];
-     //console.log("arr2: "+arr2[i]);
-      //console.log(grpElem);
-      
       grouped[index] = grpElem;
-      //console.log(grouped);
-      
       index++;
     }
     return grouped;
@@ -336,19 +277,12 @@ global.bruhdash = {
       var unzipElem = [];
       
       for(var j=0; j<arr.length; j++){   
-        //console.log(arr[j][i]);
-        //unzipElem.push(arr[j][i]);
-        //console.log(unzipElem);
-        //console.log("arr[j][i]: " + arr[j][i]);
         unzipElem[index] = arr[j][i];
-        //console.log(unzipElem)
         index++;
       }
-      //ungroup.push(unzipElem);
       ungroup[index2] = unzipElem; //add the first group to the new array
       index2++; //Increase index for the next group
       index = 0; //After pushing in the first group, reset index count
-      //console.log(ungroup);
     }
     return ungroup;
   },
@@ -372,18 +306,15 @@ global.bruhdash = {
     }
     else{
       for(var i=0; i<arr.length; i++){
-        //arr2.push(arr[i]);
         arr2[count] = arr[i];
         count++;
         if(count === size){
-          //group.push(arr2);
           group[grpCount] = arr2;
           grpCount++;
           arr2 = [];
           count = 0;
         }
         else if(i === arr.length-1){
-          //group.push(arr2);
           group[grpCount] = arr2;
         }
       }
